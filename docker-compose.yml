@@ -1,0 +1,29 @@
+
+name: TODO-compose
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+    container_name: frontend_ct
+    networks:
+      - todo-app
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend_ct
+    networks:
+      - todo-app
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+
+networks:
+  todo-app:
+
