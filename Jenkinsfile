@@ -45,7 +45,7 @@ pipeline {
 
         stage('Pushing Images to DockerHub') {
             steps {
-                Push_to_dockerHub(
+                Push_to_DockerHub(
                     'shamrock2004/todo-frontend-app',
                     'v1'
                 )
