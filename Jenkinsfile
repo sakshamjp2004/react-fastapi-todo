@@ -2,9 +2,7 @@
 @Library('todo-shared-library') _
 
 pipeline {
-    agent {
-        label 'private-app'
-    }
+    agent any
 
     stages {
         stage('Checkout') {
