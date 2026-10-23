@@ -21,14 +21,14 @@ pipeline {
             steps {
                 build_image(
                     "shamrock2004",
-                    "v1",
+                    "v1.0.0",
                     "todo-frontend-app",
                     "frontend/."
                 )
 
                 build_image(
                     "shamrock2004",
-                    "v1",
+                    "v1.0.0",
                     "todo-backend-app",
                     "backend/."
                 )
@@ -44,13 +44,13 @@ pipeline {
         stage('Pushing Images to DockerHub') {
             steps {
                 push_to_DockerHub(
-                    'shamrock2004/todo-frontend-app',
-                    'v1'
+                    'shamrock2004/todo-frontend-app:',
+                    'v1.0.0'
                 )
 
                 push_to_DockerHub(
                     'shamrock2004/todo-backend-app',
-                    'v1'
+                    'v1.0.0'
                 )
             }
         }
